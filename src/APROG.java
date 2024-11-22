@@ -44,22 +44,13 @@ public class APROG {
     }
 
 
-
     public static int[] carregamentoNecessaria( int [][] matriz) {
-
         int[] carregamento = new int[matriz.length];
-
         for (int i = 0; i < matriz.length; i++) {
-
             int recargas =0;
-
             for (int j = 0; j < matriz[i].length; j++) {
-
-
                 int[][] matrizCarregamento = new int[i][j];
                 int kmPercorrido = matriz[i][j];
-
-
                 while (kmPercorrido > 100) {
                     recargas++;
                     kmPercorrido = kmPercorrido - 100;
@@ -72,6 +63,8 @@ public class APROG {
         }
         return carregamento;
     }
+
+
     public static void matrizRecarga (int[][] matrizCarregamento) {
         for (int i = 0; i < matrizCarregamento.length; i++) {
             for (int j = 0; j < matrizCarregamento[i].length; j++) {
@@ -80,6 +73,13 @@ public class APROG {
             System.out.println();
         }
     }
+
+
+
+
+
+
+
 
 
     public static void main(String[] args) {
@@ -101,6 +101,14 @@ public class APROG {
         for (int i = 0; i < totalKm.length; i++) {
             System.out.println("Veículo" + i + ": " + totalKm[i] + "km");
         }
+
+        int[] recarregamento = carregamentoNecessaria(matriz);
+        System.out.println("Nº de carregamentos");
+        for (int i = 0; i < totalKm.length; i++) {
+            System.out.println("Veículo" + i + ": " + recarregamento[i] );
+
+        }
+
 
 
 
