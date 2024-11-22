@@ -72,7 +72,7 @@ public class APROG {
         }
         return carregamento;
     }
-    public static int[] matrizRecarga (int[][] matrizCarregamento) {
+    public static void matrizRecarga (int[][] matrizCarregamento) {
         for (int i = 0; i < matrizCarregamento.length; i++) {
             for (int j = 0; j < matrizCarregamento[i].length; j++) {
                 System.out.println(matrizCarregamento[i][j] + " ");
