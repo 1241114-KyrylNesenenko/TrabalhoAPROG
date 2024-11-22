@@ -10,8 +10,6 @@ public class APROG {
 
         System.out.println("entrega de medicamentos");
         int linhas = sc.nextInt(); int colunas = sc.nextInt();
-        System.out.println("Digite a quantidade de veículos: ");
-        int linhas = sc.nextInt();
 
         System.out.println("Digite a quantidade de dias de planeamento: ");
         int colunas = sc.nextInt();
