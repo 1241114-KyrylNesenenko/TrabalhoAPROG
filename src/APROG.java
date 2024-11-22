@@ -1,39 +1,10 @@
 //L = quantidade de veículos
 //C= dias do planeamento
 
-
 import java.util.Scanner;
 
 public class APROG {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("entrega de medicamentos");
-        int linhas = sc.nextInt(); int colunas = sc.nextInt();
-
-        System.out.println("Digite a quantidade de dias de planeamento: ");
-        int colunas = sc.nextInt();
-
-        int[][] matriz = criarMatriz(linhas, colunas);
-
-        preencherMatriz(matriz, sc);
-
-        System.out.println("a) planeamento (km/dia/veículo)");
-        mostrarMatriz(matriz);
-
-        int[] totalKm = somaKm(matriz);
-        System.out.println("Nº de Km percorridos por cada veículo: ");
-        for (int i = 0; i < totalKm.length; i++) {
-            System.out.println("Veículo" + i + ": " + totalKm[i] + "km");
-        }
-
-        int matrizrecargas=carregamentonecessaria(matriz)
-
-
-        sc.close();
-
-
-    }
 
     public static int[][] criarMatriz(int linhas, int colunas) {
         return new int[linhas][colunas];
@@ -73,35 +44,68 @@ public class APROG {
     }
 
 
-    public static int[] carregamentonecessaria(int[][] matrizcarregamento) {
+
+    public static int[] carregamentoNecessaria( int [][] matriz) {
+
         int[] carregamento = new int[matriz.length];
+
         for (int i = 0; i < matriz.length; i++) {
+
+            int recargas =0;
+
             for (int j = 0; j < matriz[i].length; j++) {
-                int[][] matrizcarregamento = new int[linhas][colunas];
-                int kmpercorrido = matriz[i][j];
-                int bateria = 0;
-                int regargas = 0;
-                while (kmpercorrido > 100) {
-                    regargas++;
-                    kmpercorrido = kmpercorrido - 100;
+
+
+                int[][] matrizCarregamento = new int[i][j];
+                int kmPercorrido = matriz[i][j];
+
+
+                while (kmPercorrido > 100) {
+                    recargas++;
+                    kmPercorrido = kmPercorrido - 100;
                 }
-                if (kmpercorrido > 0) {
-                    regargas++;
+                if (kmPercorrido > 0) {
+                    recargas++;
                 }
-                matrizcarregamento[i][j] = kmpercorrido;
             }
+            carregamento[i] = recargas;
         }
-        return matrizcarregamento;
+        return carregamento;
     }
-    public static int[] matrizrecarga (int[][] matrizcarregamento) {
-        for (int i = 0; i < matrizcarregamento.length; i++) {
-            for (int j = 0; j < matrizcarregamento[i].length; j++) {
-                System.out.println(matrizcarregamento[i][j] + " ");
+    public static int[] matrizRecarga (int[][] matrizCarregamento) {
+        for (int i = 0; i < matrizCarregamento.length; i++) {
+            for (int j = 0; j < matrizCarregamento[i].length; j++) {
+                System.out.println(matrizCarregamento[i][j] + " ");
             }
             System.out.println();
         }
     }
 
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("entrega de medicamentos");
+        int linhas = sc.nextInt(); int colunas = sc.nextInt();
+
+
+        int[][] matriz = criarMatriz(linhas, colunas);
+
+        preencherMatriz(matriz, sc);
+
+        System.out.println("a) planeamento (km/dia/veículo)");
+        mostrarMatriz(matriz);
+
+        int[] totalKm = somaKm(matriz);
+        System.out.println("Nº de Km percorridos por cada veículo: ");
+        for (int i = 0; i < totalKm.length; i++) {
+            System.out.println("Veículo" + i + ": " + totalKm[i] + "km");
+        }
+
+
+
+
+        sc.close();
+    }
 
 }
