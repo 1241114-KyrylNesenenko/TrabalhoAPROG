@@ -14,7 +14,6 @@ public class APROG {
     public static void preencherMatriz(int[][] matriz, Scanner sc) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                System.out.println("Insira [" + i + "][" + j + "]: ");
                 matriz[i][j] = sc.nextInt();
             }
         }
@@ -22,12 +21,18 @@ public class APROG {
 
 
     public static void mostrarMatriz(int[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println();
+        //Cabeçalho
+        System.out.print("dia :");
+        for (int j = 0; j < matriz[0].length; j++) {
+            System.out.print("     "+j);
         }
+        System.out.println();
+
+        System.out.print("----|");
+        for (int j = 0; j < matriz[0].length; j++) {
+            System.out.print("------|");
+        }
+        System.out.println();
     }
 
 
