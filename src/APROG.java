@@ -24,15 +24,21 @@ public class APROG {
         //Cabeçalho
         System.out.print("dia :");
         for (int j = 0; j < matriz[0].length; j++) {
-            System.out.print("     "+j);
+            System.out.printf("%8d",j);
         }
         System.out.println();
 
+
         System.out.print("----|");
         for (int j = 0; j < matriz[0].length; j++) {
-            System.out.print("------|");
+            System.out.print("-------|");
         }
         System.out.println();
+
+
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.println("V"+i+"  :");
+        }
     }
 
 
