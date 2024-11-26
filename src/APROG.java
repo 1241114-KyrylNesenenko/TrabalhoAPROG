@@ -117,6 +117,7 @@ public class APROG {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public static double[][] nivelBateria (int [][] matriz) {
@@ -154,10 +155,11 @@ public class APROG {
         System.out.println();
 
         for (int i = 0; i < bateriaRestante.length; i++) {
-            System.out.printf("V%1d  :",i);
+            System.out.printf("V%d  :", i);
             for (int j = 0; j < bateriaRestante[i].length; j++) {
-                System.out.printf("%8.1f%%", bateriaRestante[i][j]);
+                System.out.printf("%7.1f%%", bateriaRestante[i][j]);
             }
+            System.out.println();
         }
         System.out.println();
     }
@@ -190,14 +192,13 @@ public class APROG {
         }
         System.out.println();
 
-        for (int i = 0; i < media.length; i++) {
-            System.out.printf("V%1d  :",i);
+            System.out.printf("km :");
             for (int j = 0; j < media.length; j++) {
-                System.out.printf("%8.1f",media[j]);
+                System.out.printf("%8.1f", media[j]);
             }
-        }
-        System.out.println();
+            System.out.println();
     }
+
 
 
 
